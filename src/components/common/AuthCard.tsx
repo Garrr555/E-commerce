@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useAuth, type User as AuthUserType } from "../../context/AuthContext";
+import { type User as AuthUserType } from "../../context/AuthContext";
 import {
   Mail,
   Lock,
