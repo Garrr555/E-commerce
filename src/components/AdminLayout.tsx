@@ -23,7 +23,7 @@ export const AdminLayout: React.FC<{ children: React.ReactNode }> = ({ children 
             <aside className="w-full md:w-60 bg-neutral-950 text-white flex flex-col justify-between shrink-0 border-r border-neutral-800">
                 <div>
                     <div className="h-16 px-6 border-b border-neutral-800 flex items-center gap-2.5">
-                        <img src="/logo.svg" alt="StoreiFly" className="size-6" />
+                        <img src="/logo_p.png" alt="StoreiFly" className="size-6" />
                         <p className="font-medium text-lg text-white">PeacEcommerce</p>
                     </div>
                     <nav className="py-3 space-y-1">

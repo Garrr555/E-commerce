@@ -32,7 +32,7 @@ export const MerchantLayout: React.FC<{ children: React.ReactNode }> = ({ childr
                     {/* Brand */}
                     <div className="h-16 px-6 border-b border-neutral-800 flex items-center">
                         <Link to="/" className="flex items-center gap-2.5">
-                            <img src="/logo.svg" alt="logo" className="size-6" />
+                            <img src="/logo_p.png" alt="logo" className="size-6" />
                             <p className="font-medium tracking-wide text-white">PeacEcommerce</p>
                         </Link>
                     </div>
