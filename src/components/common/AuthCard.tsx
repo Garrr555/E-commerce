@@ -45,7 +45,7 @@ export const AuthCard: React.FC<AuthCardProps> = ({
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  const { login } = useAuth();
+  // const { login } = useAuth();
   const navigate = useNavigate();
 
   const isRegister = allowRegister && mode === "register";

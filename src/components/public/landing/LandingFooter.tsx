@@ -10,7 +10,7 @@ export const LandingFooter: React.FC = () => {
             to="/"
             className="flex items-center gap-2 text-2xl text-neutral-950 font-normal hover:opacity-80 transition"
           >
-            <img src="/logo.svg" alt="logo" className="h-6.5" />
+            <img src="/logo_p.png" alt="logo" className="h-6.5" />
             <span className="font-serif italic text-xl">PeacEcommerce</span>
           </Link>
 
