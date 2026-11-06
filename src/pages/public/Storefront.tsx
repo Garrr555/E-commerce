@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { DUMMY_STORES, DUMMY_PRODUCTS } from "../../assets/assets";
 import { Spinner } from "../../components/common/Spinner";
 import { StoreNavbar } from "../../components/StoreNavbar";
 import { StoreFooter } from "../../components/StoreFooter";
@@ -12,6 +11,7 @@ import { StoreTestimonials } from "../../components/public/storefront/StoreTesti
 import { StoreFaq } from "../../components/public/storefront/StoreFaq";
 import { LandingCta } from "../../components/public/landing/LandingCta";
 import { getStoreAccentStyles } from "../../utils/storeAccent";
+import { api } from "../../config/api";
 
 export const Storefront: React.FC = () => {
   const { storeSlug } = useParams<{ storeSlug: string }>();
@@ -30,21 +30,37 @@ export const Storefront: React.FC = () => {
     }
   }, [storeSlug]);
 
-  const fetchStoreData = (slug: string) => {
+  const fetchStoreData = async (slug: string) => {
     setLoading(true);
     setError(null);
-    const currentStore = DUMMY_STORES.find((s) => s.slug === slug);
-    if (!currentStore) {
-      setError("This store could not be found.");
+
+    try {
+      const [storeRes, proRes] = await Promise.all([
+        api.get(`/api/stores/slug/${slug}`),
+        api.get(`/api/products?storeSlug=${slug}&status=active`),
+      ]);
+      if (
+        storeRes.data?.success ||
+        storeRes.status === 200 ||
+        storeRes.status === 201
+      ) {
+        setStore(storeRes.data?.store);
+      }
+      if (
+        proRes.data?.success ||
+        proRes.status === 200 ||
+        proRes.status === 201
+      ) {
+        setProducts(
+          Array.isArray(proRes.data?.product) ? proRes.data.product : [],
+        );
+      }
+    } catch (e) {
+      console.log(e);
+      setError("Failed to load store");
+    } finally {
       setLoading(false);
-      return;
     }
-    const storeProducts = DUMMY_PRODUCTS.filter(
-      (p) => p.store_slug === slug && p.status === "active",
-    );
-    setStore(currentStore);
-    setProducts(storeProducts);
-    setLoading(false);
   };
 
   const handleQuickAdd = (e: React.MouseEvent, p: any) => {
