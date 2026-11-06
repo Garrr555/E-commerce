@@ -125,7 +125,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({
 
                     <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                         <div>
-                            <label className="block text-[11px] font-medium text-neutral-700 mb-1.5">Price ($) *</label>
+                            <label className="block text-[11px] font-medium text-neutral-700 mb-1.5">Price (Rp) *</label>
                             <input
                                 type="number"
                                 step="0.01"
@@ -137,7 +137,7 @@ export const ProductModal: React.FC<ProductModalProps> = ({
                             />
                         </div>
                         <div>
-                            <label className="block text-[11px] font-medium text-neutral-700 mb-1.5">Compare At ($)</label>
+                            <label className="block text-[11px] font-medium text-neutral-700 mb-1.5">Compare At (Rp)</label>
                             <input
                                 type="number"
                                 step="0.01"

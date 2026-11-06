@@ -52,7 +52,7 @@ export const Storefront: React.FC = () => {
         proRes.status === 201
       ) {
         setProducts(
-          Array.isArray(proRes.data?.product) ? proRes.data.product : [],
+          Array.isArray(proRes.data?.products) ? proRes.data.products : [],
         );
       }
     } catch (e) {

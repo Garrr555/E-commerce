@@ -17,7 +17,7 @@ export const SettingsPage: React.FC = () => {
 
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
-  const [currency, setCurrency] = useState("USD");
+  const [currency, setCurrency] = useState("IDR");
   const [logoUrl, setLogoUrl] = useState("");
   const [bannerUrl, setBannerUrl] = useState("");
   const [shippingFee, setShippingFee] = useState("0");
@@ -46,7 +46,7 @@ export const SettingsPage: React.FC = () => {
     if (store) {
       setName(store.name || "");
       setDescription(store.description || "");
-      setCurrency(store.currency || "USD");
+      setCurrency(store.currency || "IDR");
       setLogoUrl(store.logo_url || "");
       setBannerUrl(store.banner_url || "");
       setShippingFee(store.shipping_fee?.toString() || "0");

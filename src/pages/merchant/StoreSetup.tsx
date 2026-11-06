@@ -18,9 +18,9 @@ export const StoreSetup: React.FC = () => {
   );
   const [slug, setSlug] = useState(initialSlug);
   const [description, setDescription] = useState("");
-  const [currency, setCurrency] = useState("USD");
-  const [shippingFee, setShippingFee] = useState("5.00");
-  const [freeShippingThreshold, setFreeShippingThreshold] = useState("50.00");
+  const [currency, setCurrency] = useState("IDR");
+  const [shippingFee, setShippingFee] = useState("5000");
+  const [freeShippingThreshold, setFreeShippingThreshold] = useState("50000");
   const [logoUrl, setLogoUrl] = useState("");
   const [bannerUrl, setBannerUrl] = useState("");
   const [loading, setLoading] = useState(false);
@@ -212,6 +212,7 @@ export const StoreSetup: React.FC = () => {
                 onChange={(e) => setCurrency(e.target.value)}
                 className="w-full px-3.5 py-2 text-xs border border-neutral-200 rounded-xl focus:outline-none focus:border-emerald-600 focus:ring-1 focus:ring-emerald-600/20 bg-neutral-50/50"
               >
+                <option value="IDR">IDR (Rp)</option>
                 <option value="USD">USD ($)</option>
                 <option value="EUR">EUR (€)</option>
                 <option value="GBP">GBP (£)</option>
@@ -221,7 +222,7 @@ export const StoreSetup: React.FC = () => {
             </div>
             <div>
               <label className="block text-[11px] font-medium text-neutral-700 mb-1.5">
-                Shipping Fee ($)
+                Shipping Fee (Rp)
               </label>
               <input
                 type="number"
@@ -234,7 +235,7 @@ export const StoreSetup: React.FC = () => {
             </div>
             <div>
               <label className="block text-[11px] font-medium text-neutral-700 mb-1.5">
-                Free Shipping Over ($)
+                Free Shipping Over (Rp)
               </label>
               <input
                 type="number"

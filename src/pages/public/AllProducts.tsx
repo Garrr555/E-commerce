@@ -71,10 +71,14 @@ export const AllProducts: React.FC = () => {
         proRes.status === 200 ||
         proRes.status === 201
       ) {
-        setProducts(proRes.data?.product);
+        setProducts(
+          Array.isArray(proRes.data?.products) ? proRes.data.products : [],
+        );
       }
     } catch (e) {
       console.log(e);
+    } finally {
+      setLoading(false);
     }
   };
 

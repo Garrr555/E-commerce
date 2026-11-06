@@ -19,7 +19,7 @@ export const StoreShippingForm: React.FC<StoreShippingFormProps> = ({
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                    <label className="block text-[11px] font-medium text-neutral-700 mb-1.5">Standard Shipping Fee ($)</label>
+                    <label className="block text-[11px] font-medium text-neutral-700 mb-1.5">Standard Shipping Fee (Rp)</label>
                     <input
                         type="number"
                         step="0.5"
@@ -31,7 +31,7 @@ export const StoreShippingForm: React.FC<StoreShippingFormProps> = ({
                 </div>
 
                 <div>
-                    <label className="block text-[11px] font-medium text-neutral-700 mb-1.5">Free Shipping Threshold ($)</label>
+                    <label className="block text-[11px] font-medium text-neutral-700 mb-1.5">Free Shipping Threshold (Rp)</label>
                     <input
                         type="number"
                         step="1"
