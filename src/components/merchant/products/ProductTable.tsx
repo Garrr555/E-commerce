@@ -1,13 +1,5 @@
 import React from "react";
 import { Package, Edit2, Trash2 } from "lucide-react";
-
-export type categories = {
-  id?: number;
-  name?: string;
-  created_at?: string;
-  slug?: string;
-  store_id?: number;
-};
 export interface ProductItem {
   id: number;
   store_id?: number | null;
@@ -19,7 +11,6 @@ export interface ProductItem {
   sku?: string | null;
   compare_at_price?: number | string | null;
   category_name?: string;
-  categories?: categories;
   status: string;
   images?: string[];
   created_at?: string;
@@ -109,10 +100,10 @@ export const ProductTable: React.FC<ProductTableProps> = ({
                   </div>
                 </td>
                 <td className="p-3.5 text-neutral-600">
-                  {p.categories?.name || "Uncategorized"}
+                  {p?.category_name || "Uncategorized"}
                 </td>
                 <td className="p-3.5 font-mono font-medium text-neutral-900">
-                  ${Number(p.price).toFixed(2)}
+                  Rp {Number(p.price).toLocaleString("id-ID")}
                 </td>
                 <td className="p-3.5">
                   <span
