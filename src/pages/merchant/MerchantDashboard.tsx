@@ -83,7 +83,11 @@ export const MerchantDashboard: React.FC = () => {
               </div>
             </div>
             <p className="text-2xl font-semibold font-mono text-neutral-900 mt-2">
-              ${analytics ? Number(analytics.totalRevenue).toFixed(2) : "0.00"}
+              {new Intl.NumberFormat("id-ID", {
+                style: "currency",
+                currency: "IDR",
+                maximumFractionDigits: 0,
+              }).format(analytics ? Number(analytics.totalRevenue) : 0)}
             </p>
             <span className="text-[10px] text-neutral-400 mt-1 block">
               From paid transactions
@@ -119,10 +123,11 @@ export const MerchantDashboard: React.FC = () => {
               </div>
             </div>
             <p className="text-2xl font-semibold font-mono text-neutral-900 mt-2">
-              $
-              {analytics
-                ? Number(analytics?.averageOrderValue || 0).toFixed(2)
-                : "0.00"}
+              {new Intl.NumberFormat("id-ID", {
+                style: "currency",
+                currency: "IDR",
+                maximumFractionDigits: 0,
+              }).format(Number(analytics?.avgOrderValue || 0))}
             </p>
             <span className="text-[10px] text-neutral-400 mt-1 block">
               Per checkout order
@@ -196,7 +201,11 @@ export const MerchantDashboard: React.FC = () => {
                         {o.customer_name}
                       </td>
                       <td className="p-3.5 font-mono font-medium text-neutral-900">
-                        ${Number(o.total).toFixed(2)}
+                        {new Intl.NumberFormat("id-ID", {
+                          style: "currency",
+                          currency: "IDR",
+                          maximumFractionDigits: 0,
+                        }).format(Number(o.total))}
                       </td>
                       <td className="p-3.5">
                         <span

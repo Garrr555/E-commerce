@@ -44,29 +44,46 @@ const Field = ({
     </div>
 );
 
-export const CheckoutShippingForm: React.FC<Props> = ({ address, onAddressChange }) => (
-    <div className="bg-white rounded-2xl border border-neutral-200 p-5 xl:p-6">
-        <h2 className="text-xs font-semibold text-neutral-900 uppercase tracking-wider mb-4">2. Shipping Address</h2>
-        <div className="space-y-3.5">
-            <Field
-                label="Street Address *"
-                field="street"
-                address={address}
-                onAddressChange={onAddressChange}
-                placeholder="123 Market St, Suite 400"
-            />
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
-                <Field label="City *" field="city" address={address} onAddressChange={onAddressChange} placeholder="San Francisco" />
-                <Field label="State / Prov *" field="state" address={address} onAddressChange={onAddressChange} placeholder="CA" />
-                <Field
-                    label="ZIP / Postal *"
-                    field="zip"
-                    address={address}
-                    onAddressChange={onAddressChange}
-                    placeholder="94103"
-                    colSpan="col-span-2 sm:col-span-1"
-                />
-            </div>
-        </div>
+export const CheckoutShippingForm: React.FC<Props> = ({
+  address,
+  onAddressChange,
+}) => (
+  <div className="bg-white rounded-2xl border border-neutral-200 p-5 xl:p-6">
+    <h2 className="text-xs font-semibold text-neutral-900 uppercase tracking-wider mb-4">
+      2. Alamat Pengiriman
+    </h2>
+    <div className="space-y-3.5">
+      <Field
+        label="Alamat Jalan *"
+        field="street"
+        address={address}
+        onAddressChange={onAddressChange}
+        placeholder="Jl. Sudirman No. 123, RT 01/RW 02"
+      />
+      <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+        <Field
+          label="Kota / Kabupaten *"
+          field="city"
+          address={address}
+          onAddressChange={onAddressChange}
+          placeholder="Jakarta"
+        />
+        <Field
+          label="Provinsi *"
+          field="state"
+          address={address}
+          onAddressChange={onAddressChange}
+          placeholder="DKI Jakarta"
+        />
+        <Field
+          label="Kode Pos *"
+          field="zip"
+          address={address}
+          onAddressChange={onAddressChange}
+          placeholder="10110"
+          colSpan="col-span-2 sm:col-span-1"
+        />
+      </div>
     </div>
+  </div>
 );
